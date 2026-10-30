@@ -1,0 +1,90 @@
+/* Native top-layer transitions keep both opening and closing motion composited. */
+:is(
+  .bsq-dialog,
+  .bsq-privacy-dialog,
+  .bsq-gallery-dialog,
+  .bsq-menu-dialog,
+  .bsq-country-dialog
+) {
+  opacity: 0;
+  transform: translateY(16px) scale(0.985);
+  transition:
+    opacity 0.24s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    display 0.3s allow-discrete,
+    overlay 0.3s allow-discrete;
+}
+:is(
+  .bsq-dialog,
+  .bsq-privacy-dialog,
+  .bsq-gallery-dialog,
+  .bsq-menu-dialog
+)[open],
+.bsq-country-dialog:popover-open {
+  opacity: 1;
+  transform: none;
+}
+.bsq-menu-dialog {
+  transform: translateX(100%);
+}
+.bsq-menu-dialog[open],
+.bsq-menu-dialog[open]::backdrop {
+  animation: none;
+}
+:is(
+  .bsq-dialog,
+  .bsq-privacy-dialog,
+  .bsq-gallery-dialog,
+  .bsq-menu-dialog
+)::backdrop {
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    display 0.3s allow-discrete,
+    overlay 0.3s allow-discrete;
+}
+:is(
+    .bsq-dialog,
+    .bsq-privacy-dialog,
+    .bsq-gallery-dialog,
+    .bsq-menu-dialog
+  )[open]::backdrop {
+  opacity: 1;
+}
+@starting-style {
+  :is(.bsq-dialog, .bsq-privacy-dialog, .bsq-gallery-dialog)[open],
+  .bsq-country-dialog:popover-open {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  .bsq-menu-dialog[open] {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  :is(
+      .bsq-dialog,
+      .bsq-privacy-dialog,
+      .bsq-gallery-dialog,
+      .bsq-menu-dialog
+    )[open]::backdrop {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    .bsq-dialog,
+    .bsq-privacy-dialog,
+    .bsq-gallery-dialog,
+    .bsq-menu-dialog,
+    .bsq-country-dialog
+  ),
+  :is(
+    .bsq-dialog,
+    .bsq-privacy-dialog,
+    .bsq-gallery-dialog,
+    .bsq-menu-dialog
+  )::backdrop {
+    transition: none !important;
+    transform: none !important;
+  }
+}

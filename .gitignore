@@ -1,0 +1,16 @@
+data/
+node_modules/
+.env
+reference.html
+reference-styles.css
+test-results/
+dist/
+.vercel/
+.env.*
+
+.next/
+out/
+# Local source references and downloads are not deployment files.
+reference/
+# Keep a credential-free configuration template available to deployments.
+!.env.example

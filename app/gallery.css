@@ -1,0 +1,224 @@
+.bsq-gallery {
+  background: #fff;
+  padding-top: 60px;
+  padding-bottom: 55px;
+}
+.bsq-gallery-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.bsq-gallery-eyebrow {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #7a815f;
+}
+.bsq-gallery-heading h2 {
+  font-size: clamp(30px, 5vw, 40px);
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin-top: 12px;
+}
+.bsq-gallery-heading p {
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 520px;
+}
+.bsq-gallery-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+.bsq-gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.bsq-gallery-filters button {
+  border: 1px solid #dfe4d7;
+  border-radius: 25px;
+  padding: 8px 20px;
+  background: #fff;
+  color: #5d6853;
+  font-size: 12px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.bsq-gallery-filters button[aria-pressed="true"] {
+  background: var(--bsq-button-bg);
+  color: #fff;
+  border-color: var(--bsq-button-bg);
+}
+
+.bsq-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px 22px;
+  align-items: start;
+}
+.bsq-gallery-item {
+  margin: 0;
+  min-width: 0;
+  display: block;
+}
+.bsq-gallery-item[hidden] {
+  display: none;
+}
+.bsq-gallery-open {
+  display: block;
+  position: relative;
+  width: 100%;
+  border: 0;
+  background: #eef0e8;
+  padding: 0;
+  border-radius: 13px;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.bsq-gallery-open > img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.bsq-gallery-open:hover > img {
+  transform: scale(1.035);
+}
+
+.bsq-gallery-dialog {
+  border: 1px solid #ffffff26;
+  background: #10221b;
+  color: #fff;
+  border-radius: 16px;
+  padding: 52px 22px 18px;
+  width: min(1150px, 94vw);
+  max-width: 94vw;
+  max-height: 94svh;
+  overflow: auto;
+  box-shadow: 0 20px 70px #0005;
+}
+.bsq-gallery-dialog::backdrop {
+  background: #05110be6;
+}
+.bsq-gallery-close {
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  width: 33px;
+  height: 33px;
+  font-size: 30px;
+  line-height: 1;
+}
+.bsq-gallery-full-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+.bsq-gallery-full-image > img {
+  max-height: calc(94svh - 155px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.bsq-gallery-viewer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-top: 16px;
+}
+
+.bsq-gallery-viewer-count {
+  font-size: 10px;
+  color: #b3bdab;
+  letter-spacing: 1px;
+}
+.bsq-gallery-viewer-controls {
+  display: flex;
+  gap: 9px;
+}
+.bsq-gallery-viewer-controls button {
+  border: 1px solid #ffffff50;
+  background: var(--bsq-button-bg);
+  color: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+}
+@media (max-width: 1000px) {
+  .bsq-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 18px;
+  }
+}
+@media (max-width: 767px) {
+  .bsq-gallery {
+    padding: 45px 6%;
+  }
+  .bsq-gallery-heading {
+    gap: 14px;
+    margin-bottom: 23px;
+  }
+  .bsq-gallery-heading p {
+    margin-top: 0;
+    font-size: 13px;
+    max-width: 520px;
+  }
+  .bsq-gallery-toolbar {
+    gap: 12px;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .bsq-gallery-filters {
+    gap: 6px;
+  }
+  .bsq-gallery-filters button {
+    font-size: 11px;
+    padding: 7px 13px;
+  }
+  .bsq-gallery-grid {
+    gap: 20px 12px;
+  }
+  .bsq-gallery-open {
+    border-radius: 9px;
+  }
+  .bsq-gallery-dialog {
+    padding: 47px 12px 14px;
+  }
+  .bsq-gallery-viewer-count {
+    font-size: 9px;
+  }
+  .bsq-gallery-viewer-controls button {
+    width: 33px;
+    height: 33px;
+  }
+}
+@media (max-width: 360px) {
+  .bsq-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .bsq-gallery-filters button {
+    padding: 7px 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bsq-gallery-open > img,
+  .bsq-gallery-filters button {
+    transition: none;
+  }
+}
