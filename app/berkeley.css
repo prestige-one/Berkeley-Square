@@ -939,3 +939,9 @@ body {
     height: 140px;
   }
 }
+/* Tablet-only brochure layout; desktop and mobile retain their images. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .bsq-brochure { grid-template-columns: minmax(0, 1fr); }
+  .bsq-brochure .bsq-brochure-visual { display: none; }
+  .bsq-brochure .bsq-brochure-form { width: 100%; max-width: none; padding: 40px 32px; }
+}
