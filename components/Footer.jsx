@@ -1,3 +1,4 @@
+import ProjectLogo from "./ProjectLogo";
 import { PrivacyLink } from "./PrivacyPopup";
 import { EnquiryButton } from "./Interactions";
 export default function Footer() {
@@ -9,17 +10,10 @@ export default function Footer() {
             <a
               className="bsq-footer-logo"
               href="#home"
-              aria-label="Prestige One home"
+              aria-label="Berkeley Square home"
             >
-              <img
-                src="/assets/prestige.svg"
-                width="316"
-                height="102"
-                alt="Prestige One Developments"
-                loading="lazy"
-              />
+              <ProjectLogo className="bsq-footer-project-logo" loading="lazy" />
             </a>
-            <p className="bsq-footer-project">Berkeley Square</p>
             <p className="bsq-footer-description">
               Victorian-inspired living.
               <br />

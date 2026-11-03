@@ -1,3 +1,4 @@
+import ProjectLogo from "./ProjectLogo";
 import { EnquiryButton, LeadForm, LocationControls } from "./Interactions";
 export default function Hero() {
   return (
@@ -20,13 +21,7 @@ export default function Hero() {
         <span className="bsq-cover-eyebrow">
           CLASSIC ENGLISH ELEGANCE. MODERN DUBAI LIVING.
         </span>
-        <img
-          className="bsq-cover-project-logo"
-          src="/assets/source/Berkeley-Square-logo-sswhite-13-3-1.png"
-          width="700"
-          height="373"
-          alt="Berkeley Square by Prestige One"
-        />
+        <ProjectLogo className="bsq-cover-project-logo" />
         <span className="bsq-cover-divider" aria-hidden="true"></span>
         <h1 id="bsq-hero-title">Classic Elegance. Modern Living.</h1>
       </div>

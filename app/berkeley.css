@@ -945,3 +945,7 @@ body {
   .bsq-brochure .bsq-brochure-visual { display: none; }
   .bsq-brochure .bsq-brochure-form { width: 100%; max-width: none; padding: 40px 32px; }
 }
+
+/* Use the project artwork without the old developer-logo offset. */
+.bsq-footer-logo { width: 210px; margin: 0 0 22px; }
+.bsq-footer-logo img { filter: none; }
